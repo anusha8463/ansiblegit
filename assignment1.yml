@@ -1,0 +1,12 @@
+---
+ - name: Multiplepackageplaybook
+   hosts: all
+   tasks:
+    - name: packaging_module
+      apt:
+        name: "{{ item }}"
+        state: latest
+      with_items:
+       - git
+       - wget
+       - curl  

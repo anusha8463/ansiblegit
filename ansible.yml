@@ -1,0 +1,20 @@
+---
+ - name: copypalybook
+   hosts: all
+   tasks:
+    - name: copy_module
+      copy:
+        src: /root/file2
+        dest: /root
+    - name: packaging_module
+      apt:
+        name: git
+        state: latest
+    - name: File_permission
+      file:
+        path: /root/file2
+        mode: 0444
+        owner: ubuntu
+        group: ubuntu
+
+

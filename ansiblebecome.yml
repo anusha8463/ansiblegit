@@ -1,0 +1,11 @@
+---
+ - name: copypalybook
+   hosts: all
+   become: yes
+   tasks:
+    - name: copy_module
+      copy:
+        src: file1.html
+        dest: /user
+
+

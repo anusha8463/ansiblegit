@@ -1,0 +1,9 @@
+---
+ - name: installation
+   hosts: all
+   become: yes
+   tasks:
+    - name: packaging_module
+      apt:
+        name: git
+        state: latest

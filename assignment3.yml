@@ -1,0 +1,13 @@
+---
+ - name: Multiplepackageplaybook
+   hosts: all
+   tasks:
+    - name: copyfile
+      copy:
+        src: /root/add.sh
+        dest: /root 
+    - name: Shell_script
+      shell: sh /root/add.sh
+      register: target_sh
+    - debug: 
+        var: target_sh.stdout_lines
